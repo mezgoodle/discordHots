@@ -1,4 +1,4 @@
-from utils import *
+from utils import get_key, get_quote
 from keepAlive import keep_alive
 from replit import db
 import datetime
