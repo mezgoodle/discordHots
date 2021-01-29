@@ -12,6 +12,7 @@ from keepAlive import keep_alive
 
 
 client = discord.Client()
+add_words = ['lose', 'victory']
 
 
 def get_quote():
@@ -21,19 +22,30 @@ def get_quote():
     return quote
 
 
-def update_encouragements(encouraging_message):
-    if 'encouragments' in db.keys():
-        encouragments = db['encouragments']
-        encouragments.append(encouraging_message)
-        db['encouragments'] = encouragments
-    else:
-        db['encouragments'] = [encouraging_message]
+def get_key():
+    date = datetime.datetime.now()
+    key = str(date.month) + str(date.year) + str(date.day)
+    return key
 
-def delete_encouragement(index):
-    encouragments = db['encouragments']
-    if len(encouragments) > index:
-        del encouragments[index]
-        db['encouragments'] = encouragments
+
+def add_value(value):
+    key = get_key()
+    if key in db.keys():
+        stats = db[key]
+        if value in stats.keys():
+            stats[value] += 1
+        else:
+            stats[value] = 1
+        db[key] = stats
+    else:
+        db[key] = {value: 1}
+
+
+def get_stat(value):
+    if value == 'month':
+        pass
+    else:
+        pass
 
 
 @client.event
@@ -49,6 +61,16 @@ async def on_message(message):
     if msg.startswith('$inspire'):
         quote = get_quote()
         await message.channel.send(quote)
+
+    if msg.startswith('$add'):
+        value = msg.split('add ', 1)[1]
+        if value in add_words:
+            add_value(value)
+        else:
+            await message.channel.send(f'Look at your value. Must be as here: {add_words}')
+
+    if msg.startswith('$stat'):
+        value = msg.split('add ', 1)[1]
 
 keep_alive()
 client.run(os.getenv('TOKEN'))
