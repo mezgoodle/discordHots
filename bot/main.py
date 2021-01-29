@@ -35,18 +35,22 @@ def get_stat(value):
         for key in keys:
             for key_ in db[key].keys():
                 stats[key_] += db[key][key_]
+        winrate = int(stats['victory']) / (int(stats['victory']) + int(stats['lose']))
         return f'''Your stats for this month
     Victories: {stats['victory']}
     Loses: {stats['lose']}    
+    Winrate: {winrate}
     '''
     else:
         key = get_key()
         if key in db.keys():
             for key_ in db[key]:
                 stats[key_] += db[key][key_]
+        winrate = int(stats['victory']) / (int(stats['victory']) + int(stats['lose']))
         return f'''Your stats for this day
     Victories: {stats['victory']}
-    Loses: {stats['lose']}    
+    Loses: {stats['lose']}   
+    Winrate: {winrate}
     '''
 
 
