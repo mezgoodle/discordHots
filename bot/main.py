@@ -37,10 +37,10 @@ def get_stat(value):
                 stats[key_] += db[key][key_]
         winrate = int(stats['victory']) / \
             (int(stats['victory']) + int(stats['lose']))
-        return f'''Your stats for this month
-    Victories: {stats['victory']}
-    Loses: {stats['lose']}
-    Winrate: {winrate}
+        return f'''Your stats for this month:
+    - Victories: {stats['victory']}
+    - Loses: {stats['lose']}
+    - Winrate: {round(winrate, 2) * 100} %
     '''
     else:
         key = get_key()
@@ -49,10 +49,10 @@ def get_stat(value):
                 stats[key_] += db[key][key_]
         winrate = int(stats['victory']) / \
             (int(stats['victory']) + int(stats['lose']))
-        return f'''Your stats for this day
-    Victories: {stats['victory']}
-    Loses: {stats['lose']}
-    Winrate: {winrate}
+        return f'''Your stats for this day:
+    - Victories: {stats['victory']}
+    - Loses: {stats['lose']}
+    - Winrate: {round(winrate, 2) * 100} %
     '''
 
 
