@@ -1,13 +1,12 @@
+from utils import *
+from keepAlive import keep_alive
+from replit import db
+import datetime
+import os
 import discord
 from dotenv import load_dotenv
 
 load_dotenv()
-import os
-
-import datetime
-from replit import db
-from keepAlive import keep_alive
-from utils import *
 
 
 client = discord.Client()
@@ -35,10 +34,11 @@ def get_stat(value):
         for key in keys:
             for key_ in db[key].keys():
                 stats[key_] += db[key][key_]
-        winrate = int(stats['victory']) / (int(stats['victory']) + int(stats['lose']))
+        winrate = int(stats['victory']) / \
+            (int(stats['victory']) + int(stats['lose']))
         return f'''Your stats for this month
     Victories: {stats['victory']}
-    Loses: {stats['lose']}    
+    Loses: {stats['lose']}
     Winrate: {winrate}
     '''
     else:
@@ -46,10 +46,11 @@ def get_stat(value):
         if key in db.keys():
             for key_ in db[key]:
                 stats[key_] += db[key][key_]
-        winrate = int(stats['victory']) / (int(stats['victory']) + int(stats['lose']))
+        winrate = int(stats['victory']) / \
+            (int(stats['victory']) + int(stats['lose']))
         return f'''Your stats for this day
     Victories: {stats['victory']}
-    Loses: {stats['lose']}   
+    Loses: {stats['lose']}
     Winrate: {winrate}
     '''
 
