@@ -1,31 +1,17 @@
 import discord
 from dotenv import load_dotenv
-import requests
 
 load_dotenv()
 import os
-import json
-import random
+
 import datetime
 from replit import db
 from keepAlive import keep_alive
+from utils import *
 
 
 client = discord.Client()
 add_words = ['lose', 'victory']
-
-
-def get_quote():
-    response = requests.get('https://zenquotes.io/api/random')
-    json_data = json.loads(response.text)
-    quote = json_data[0]['q'] + ' - ' + json_data[0]['a']
-    return quote
-
-
-def get_key():
-    date = datetime.datetime.now()
-    key = str(date.month) + str(date.year) + str(date.day)
-    return key
 
 
 def add_value(value):
