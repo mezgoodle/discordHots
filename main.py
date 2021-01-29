@@ -6,6 +6,8 @@ load_dotenv()
 import os
 import json
 import random
+from replit import db
+
 
 client = discord.Client()
 
@@ -25,6 +27,21 @@ def get_quote():
     return quote
 
 
+def update_encouragements(encouraging_message):
+    if 'encouragments' in db.key():
+        encouragments = db['encouragments']
+        encouragments.append(encouraging_message)
+        db['encouragments'] = encouragments
+    else:
+        db['encouragments'] = [encouraging_message]
+
+def delete_encouragement(index):
+    encouragments = db['encouragments']
+    if len(encouragments) > index:
+        del encouragments[index]
+        db['encouragments'] = encouragments
+
+
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
@@ -39,8 +56,14 @@ async def on_message(message):
         quote = get_quote()
         await message.channel.send(quote)
 
+    options = starter_encouragements
+    if 'encouragments' in db.keys():
+        options += db['encouragments']
+
     if any(word in msg for word in sad_words):
-        await message.channel.send(random.choice(starter_encouragements))
+        await message.channel.send(random.choice(options))
+
+    # if msg.startswith()
 
 
 client.run(os.getenv('TOKEN'))
