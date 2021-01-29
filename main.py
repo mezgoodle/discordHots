@@ -42,8 +42,13 @@ def add_value(value):
 
 
 def get_stat(value):
+    stats = {'loses': 0, 'victories': 0}
     if value == 'month':
-        pass
+        date = datetime.datetime.now()
+        keys = db.list(str(date.month) + str(date.year))
+        for key in keys:
+            stats['loses'] += key[add_words[0]]
+            stats['victories'] += key[add_words[1]]
     else:
         pass
 
