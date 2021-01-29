@@ -1,4 +1,4 @@
-from utils import get_key, get_quote
+from utils import get_key, get_quote, clean_db
 from keepAlive import keep_alive
 from replit import db
 import datetime
@@ -27,6 +27,7 @@ def add_value(value):
 
 
 def get_stat(value):
+    clean_db(db)
     stats = {'lose': 0, 'victory': 0}
     if value == 'month':
         date = datetime.datetime.now()
