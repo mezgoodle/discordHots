@@ -42,26 +42,26 @@ def add_value(value):
 
 
 def get_stat(value):
-    stats = {'loses': 0, 'victories': 0}
+    stats = {'lose': 0, 'victory': 0}
     if value == 'month':
         date = datetime.datetime.now()
-        keys = db.list(str(date.month) + str(date.year))
+        keys = db.prefix(str(date.month) + str(date.year))
         for key in keys:
-            stats['loses'] += key[add_words[0]]
-            stats['victories'] += key[add_words[1]]
+            for key_ in db[key].keys():
+                stats[key_] += db[key][key_]
         return f'''Your stats for this month
-        Victories: {stats['victories']}
-        Loses: {stats['loses']}    
-        '''
+    Victories: {stats['victory']}
+    Loses: {stats['lose']}    
+    '''
     else:
         key = get_key()
         if key in db.keys():
-            stats['loses'] += db[key][add_words[0]]
-            stats['victories'] += db[key][add_words[1]]
+            for key_ in db[key]:
+                stats[key_] += db[key][key_]
         return f'''Your stats for this day
-        Victories: {stats['victories']}
-        Loses: {stats['loses']}    
-        '''
+    Victories: {stats['victory']}
+    Loses: {stats['lose']}    
+    '''
 
 
 @client.event
@@ -82,6 +82,7 @@ async def on_message(message):
         value = msg.split('add ', 1)[1]
         if value in add_words:
             add_value(value)
+            await message.channel.send('Added')
         else:
             await message.channel.send(f'Look at your value. Must be as here: {add_words}')
 
