@@ -86,8 +86,12 @@ async def on_message(message):
             await message.channel.send(f'Look at your value. Must be as here: {add_words}')
 
     if msg.startswith('$stat'):
-        value = msg.split('stat ', 1)[1]
-        string = get_stat(value)
+        string = ''
+        if len(msg) > len('$stat'):
+            value = msg.split('stat ', 1)[1]
+            string = get_stat(value)
+        else:
+            string = get_stat('')
         await message.channel.send(string)
 
 keep_alive()
