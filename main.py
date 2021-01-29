@@ -49,8 +49,19 @@ def get_stat(value):
         for key in keys:
             stats['loses'] += key[add_words[0]]
             stats['victories'] += key[add_words[1]]
+        return f'''Your stats for this month
+        Victories: {stats['victories']}
+        Loses: {stats['loses']}    
+        '''
     else:
-        pass
+        key = get_key()
+        if key in db.keys():
+            stats['loses'] += db[key][add_words[0]]
+            stats['victories'] += db[key][add_words[1]]
+        return f'''Your stats for this day
+        Victories: {stats['victories']}
+        Loses: {stats['loses']}    
+        '''
 
 
 @client.event
@@ -75,7 +86,9 @@ async def on_message(message):
             await message.channel.send(f'Look at your value. Must be as here: {add_words}')
 
     if msg.startswith('$stat'):
-        value = msg.split('add ', 1)[1]
+        value = msg.split('stat ', 1)[1]
+        string = get_stat(value)
+        await message.channel.send(string)
 
 keep_alive()
 client.run(os.getenv('TOKEN'))
