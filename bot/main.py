@@ -47,13 +47,15 @@ def get_stat(value):
         if key in db.keys():
             for key_ in db[key]:
                 stats[key_] += db[key][key_]
-        winrate = int(stats['victory']) / \
+            winrate = int(stats['victory']) / \
             (int(stats['victory']) + int(stats['lose']))
-        return f'''Your stats for this day:
-    - Victories: {stats['victory']}
-    - Loses: {stats['lose']}
-    - Winrate: {round(winrate, 2) * 100} %
-    '''
+            return f'''Your stats for this day:
+        - Victories: {stats['victory']}
+        - Loses: {stats['lose']}
+        - Winrate: {round(winrate, 2) * 100} %
+        '''
+        else:
+            return 'You haven\'t stats today'
 
 
 @client.event
