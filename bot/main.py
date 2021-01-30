@@ -48,7 +48,7 @@ def get_stat(value):
             for key_ in db[key]:
                 stats[key_] += db[key][key_]
             winrate = int(stats['victory']) / \
-            (int(stats['victory']) + int(stats['lose']))
+                (int(stats['victory']) + int(stats['lose']))
             return f'''Your stats for this day:
         - Victories: {stats['victory']}
         - Loses: {stats['lose']}
