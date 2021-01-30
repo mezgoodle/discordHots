@@ -26,6 +26,11 @@ def add_value(value):
         db[key] = {value: 1}
 
 
+def clean_stat():
+    key = get_key()
+    del db[key]
+
+
 def get_stat(value):
     clean_db(db)
     stats = {'lose': 0, 'victory': 0}
@@ -79,6 +84,10 @@ async def on_message(message):
             await message.channel.send('Added')
         else:
             await message.channel.send(f'Look at your value. Must be as here: {add_words}')
+
+    if msg == '$clear':
+        clean_stat()
+        await message.channel.send('Your stats for today have been cleaned')
 
     if msg.startswith('$stat'):
         string = ''
