@@ -28,7 +28,8 @@ def add_value(value):
 
 def clean_stat():
     key = get_key()
-    del db[key]
+    if key in db.keys():
+        del db[key]
 
 
 def get_stat(value):
