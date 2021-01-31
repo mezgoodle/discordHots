@@ -94,7 +94,7 @@ I'm using [Codacy](https://www.codacy.com/) to automate my code quality.
 
 With my bot you can **inspire** yourself, and **keep statistics** of your games. Also it is easy to expand opportunities.
 
-## Code Example ✍️
+## Code Example ✏️
 
 `utils.py`
 
