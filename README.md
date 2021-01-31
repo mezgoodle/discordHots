@@ -16,8 +16,8 @@
   <i>Table of contents</i>
 </h2>
 
-- [Motivation 🎖️](#motivation-)
-- [Build status 🏗️](#build-status-)
+- [Motivation ❗](#motivation-)
+- [Build status 🔨](#build-status-)
 - [Badges 🏅](#badges-)
 - [Code style 📇](#code-style-)
 - [Screenshots 📷](#screenshots-)
@@ -26,17 +26,17 @@
 - [Code Example ✍️](#code-example-)
 - [Installation 💻](#installation-)
 - [Fast usage 💨](#fast-usage-)
-- [API Reference 🦾](#api-reference-)
 - [Tests 🧪](#tests-)
-- [Contribute 💁🏻](#contribute-)
-- [Credits 🧑‍🤝‍🧑](#credits-)
+- [Contribute 💁](#contribute-)
+- [Credits 🧑‍🤝‍](#credits-)
 - [License 🔖](#license-)
 
-## Motivation 🎖️
+
+## Motivation ❗
 
 At first, I saw [this](https://www.youtube.com/watch?v=SPTfmiYiuok&feature=emb_logo) video from **freeCodeCamp** and [this](https://tproger.ru/video/boty-dlja-discord-na-python-proekt-dlja-nachinajushhih/) article from **Tproger**. Also I like to play [HotS](https://heroesofthestorm.com/en-us/) with my friends every day. So I thought if we can log our statistic of games.
 
-## Build status 🏗️
+## Build status 🔨
 
 Here you can see build status of [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration):
 
@@ -164,11 +164,11 @@ python bot/main.py
 
 I made tests only for [utils.py](https://github.com/mezgoodle/discordHots/blob/master/bot/utils.py) [here](https://github.com/mezgoodle/discordHots/blob/master/test/test_utils.py). The result you can see [here](https://github.com/mezgoodle/discordHots/actions).
 
-## Contribute 💁🏻
+## Contribute 💁
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Also look at the [CONTRIBUTING.md](https://github.com/mezgoodle/discordHots/blob/master/CONTRIBUTING.md).
 
-## Credits 🧑‍🤝‍🧑
+## Credits 🧑‍🤝‍
 
 Links which inspired me to build this project:
 
