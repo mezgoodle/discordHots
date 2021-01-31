@@ -16,22 +16,20 @@
   <i>Table of contents</i>
 </h2>
 
-- [Motivation ❗](#motivation-)
-- [Build status 🔨](#build-status-)
-- [Badges 🏅](#badges-)
-- [Code style 📇](#code-style-)
-- [Screenshots 📷](#screenshots-)
-- [Tech/framework used 🔧](#techframework-used-)
-- [Features 💪](#features-)
+- [Motivation :exclamation:](#motivation-exclamation)
+- [Build status :hammer:](#build-status-hammer)
+- [Badges :mega:](#badges-mega)
+- [Code style :scroll:](#code-style-scroll)
+- [Screenshots :camera:](#screenshots-camera)
+- [Tech/framework used :wrench:](#techframework-used-wrench)
+- [Features :muscle:](#features-muscle)
 - [Code Example :pushpin:](#code-example-pushpin)
-- [Installation 💻](#installation-)
-- [Fast usage 💨](#fast-usage-)
-- [Tests 🧪](#tests-)
-- [Contribute 💁](#contribute-)
-- [Credits 🧑‍🤝‍](#credits-)
+- [Installation :computer:](#installation-computer)
+- [Fast usage :dash:](#fast-usage-dash)
+- [Tests :microscope:](#tests-microscope)
+- [Contribute :running:](#contribute-running)
+- [Credits :cat::handshake:](#credits-cathandshake)
 - [License 🔖](#license-)
-
-
 
 ## Motivation :exclamation:
 
