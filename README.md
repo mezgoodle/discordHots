@@ -29,7 +29,7 @@
 - [Tests :microscope:](#tests-microscope)
 - [Contribute :running:](#contribute-running)
 - [Credits :cat::handshake:](#credits-cathandshake)
-- [License 🔖](#license-)
+- [License :bookmark:](#license-bookmark)
 
 ## Motivation :exclamation:
 
@@ -174,6 +174,6 @@ Links which inspired me to build this project:
 - [Article](https://tproger.ru/video/boty-dlja-discord-na-python-proekt-dlja-nachinajushhih/)
 - [Video](https://www.youtube.com/watch?v=SPTfmiYiuok&feature=emb_logo)
 
-## License 🔖
+## License :bookmark:
 
 MIT © [mezgoodle](https://github.com/mezgoodle)
