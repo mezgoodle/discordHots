@@ -26,6 +26,7 @@
 - [Code Example :pushpin:](#code-example-pushpin)
 - [Installation :computer:](#installation-computer)
 - [Fast usage :dash:](#fast-usage-dash)
+- [API Reference :fireworks:](#api-reference-fireworks)
 - [Tests :microscope:](#tests-microscope)
 - [Contribute :running:](#contribute-running)
 - [Credits :cat::handshake:](#credits-cathandshake)
@@ -158,6 +159,17 @@ Type in terminal:
 ```
 python bot/main.py
 ```
+
+## API Reference :fireworks:
+
+| Command | Result |
+|--|--|
+| $add victory(lose) | Add to your today statistic victory or lose |
+| $del victory(lose) | Delete from your today statistic victory or lose |
+| $stat | Get your today statistic |
+| $stat month | Get your month statistic |
+| $clear | Clear your full today statistic |
+| $inspire | Get inspiration quote |
 
 ## Tests :microscope:
 
