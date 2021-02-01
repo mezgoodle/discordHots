@@ -26,6 +26,22 @@ def add_value(value):
         db[key] = {value: 1}
 
 
+def delete_value(value):
+    key = get_key()
+    if key in db.keys():
+        stats = db[key]
+        if value in stats.keys():
+            if stats[value] != 0:
+                stats[value] -= 1
+                db[key] = stats
+            return 'Deleted'
+        else:
+            return 'This parameter is clear'
+            
+    else:
+        return 'You haven\'t loses today'
+
+
 def clean_stat():
     key = get_key()
     if key in db.keys():
@@ -83,6 +99,14 @@ async def on_message(message):
         if value in add_words:
             add_value(value)
             await message.channel.send('Added')
+        else:
+            await message.channel.send(f'Look at your value. Must be as here: {add_words}')
+
+    if msg.startswith('$del'):
+        value = msg.split('del ', 1)[1]
+        if value in add_words:
+            string = delete_value(value)
+            await message.channel.send(string)
         else:
             await message.channel.send(f'Look at your value. Must be as here: {add_words}')
 
