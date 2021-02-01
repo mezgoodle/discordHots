@@ -37,7 +37,7 @@ def delete_value(value):
             return 'Deleted'
         else:
             return 'This parameter is clear'
-            
+
     else:
         return 'You haven\'t loses today'
 
